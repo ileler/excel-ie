@@ -19,7 +19,7 @@ import java.util.List;
 
 public final class BeanUtil {
 	
-	private static final String RULE = "rule";
+	private static final String VALIDATOR = "validator";
 	
 	private static final String NAME = "name";
 	
@@ -85,14 +85,14 @@ public final class BeanUtil {
 				Element fieldElement = (Element) fieldNodeList.item(i);
 				String title = null,efName = null,rfName = fieldElement.getAttribute(RFNAME);
 				if (StringUtils.isEmpty(title = fieldElement.getAttribute(TITLE)) || StringUtils.isEmpty(efName = fieldElement.getAttribute(EFNAME))) 	continue;
-				efbList.add(new FieldBean(efbList.size(), title, efName, rfName, fieldElement.getAttribute(DVALUE), langCode, getRuleBeans(fieldElement.getElementsByTagName(RULE))));
+				efbList.add(new FieldBean(efbList.size(), title, efName, rfName, fieldElement.getAttribute(DVALUE), langCode, getRuleBeans(fieldElement.getElementsByTagName(VALIDATOR))));
 			}
 			if (efbList.size() < 1) 	return null;
 			FieldBean[] fieldBeans = efbList.toArray(new FieldBean[efbList.size()]);
 			NodeList rowCheckNodeList = doc.getElementsByTagName(ROWCHECK);
 			if (rowCheckNodeList != null && rowCheckNodeList.getLength() > 0) {
 				Element rowCheckElement = (Element) rowCheckNodeList.item(0);
-				return new EntityBean(rowCheckElement.getAttribute(REFNAME), rowCheckElement.getAttribute(ESPLIT), rowCheckElement.getAttribute(ETITLE), fieldBeans, getRuleBeans(rowCheckElement.getElementsByTagName(RULE)));
+				return new EntityBean(rowCheckElement.getAttribute(REFNAME), rowCheckElement.getAttribute(ESPLIT), rowCheckElement.getAttribute(ETITLE), fieldBeans, getRuleBeans(rowCheckElement.getElementsByTagName(VALIDATOR)));
 			}
 			return new EntityBean(null, null, null, fieldBeans, null);
 		} catch (SAXException | IOException e) {

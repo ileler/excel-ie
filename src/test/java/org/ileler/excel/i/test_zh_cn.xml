@@ -1,23 +1,23 @@
 <fields>
 	<field efname="e2" rfname="isbn" title="*ISBN">
-		<rule name=".EmptyCheckBean" emsg="ISBN：不能为空"/>
-		<rule name=".ISBNCheckBean" emsg="ISBN：格式不正确" split="-"/>
+		<validator name=".EmptyCheckBean" emsg="ISBN：不能为空"/>
+		<validator name=".ISBNCheckBean" emsg="ISBN：格式不正确" split="-"/>
 	</field>
 	<field efname="e3" rfname="original_isbn" title="原出版物的ISBN号">
-		<rule name=".ISBNCheckBean" emsg="原出版物的ISBN号：格式不正确" split="-"/>
+		<validator name=".ISBNCheckBean" emsg="原出版物的ISBN号：格式不正确" split="-"/>
 	</field>
 	<field efname="e5" rfname="pdri_title" title="*题名">
-		<rule name=".EmptyCheckBean" emsg="题名：不能为空"/>
-		<rule name=".RegCheckBean" emsg="题名：非空字符1到100" pattern="^[^\s].{0,99}$"/>
+		<validator name=".EmptyCheckBean" emsg="题名：不能为空"/>
+		<validator name=".RegCheckBean" emsg="题名：非空字符1到100" pattern="^[^\s].{0,99}$"/>
 	</field>
 	<field efname="e26" rfname="location" title="解析地址">
-		<rule name=".RegCheckBean" emsg="解析地址：格式不正确" pattern="^(http://|https://)[^\u4e00-\u9fa5\s]*?[a-zA-Z]\..{1,2048}$"/>
+		<validator name=".RegCheckBean" emsg="解析地址：格式不正确" pattern="^(http://|https://)[^\u4e00-\u9fa5\s]*?[a-zA-Z]\..{1,2048}$"/>
 	</field>
 	<field efname="e27" rfname="md5_val" title="*资源摘要值">
-		<rule name=".EmptyCheckBean" emsg="资源摘要值：不能为空"/>
-		<rule name=".RegCheckBean" emsg="资源摘要值：16进制的32位字符" pattern="^([a-fA-F0-9]{32})$"/>
+		<validator name=".EmptyCheckBean" emsg="资源摘要值：不能为空"/>
+		<validator name=".RegCheckBean" emsg="资源摘要值：16进制的32位字符" pattern="^([a-fA-F0-9]{32})$"/>
 	</field>
 	<rowcheck efname="emsg" esplit=" / " etitle="错误原因">
-		<rule name=".PDRI_CodeCheckBean" emsg="PDRI CODE已经存在或无法生成PDRI，请确定ISBN号格式正确" key="pdri_code" type_key="isbn" publisherCode="publisherCode"/>
+		<validator name=".PDRI_CodeCheckBean" emsg="PDRI CODE已经存在或无法生成PDRI，请确定ISBN号格式正确" key="pdri_code" type_key="isbn" publisherCode="publisherCode"/>
 	</rowcheck>
 </fields>

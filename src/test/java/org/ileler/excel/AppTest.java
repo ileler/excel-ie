@@ -4,11 +4,9 @@ import org.ileler.excel.e.ExportUtil;
 import org.ileler.excel.util.LangCode;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Hashtable;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,10 +14,14 @@ import java.util.Map;
  */
 public class AppTest {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws Exception {
         Map<String, Object> data = new Hashtable<>(0);
-        data.put("", "");
-        ExportUtil.exportExcel("test", new FileOutputStream("test.xls", true), new FileInputStream("test_zh_cn.xml"), LangCode.ZH_CN, );
+        data.put("field1", "1");
+        data.put("field2", "2");
+        data.put("field3", "3");
+        data.put("field4", "4");
+        data.put("field5", "5");
+        ExportUtil.exportExcel("test", new FileOutputStream("test.xls", true), new FileInputStream("test_zh_cn.xml"), LangCode.ZH_CN, Arrays.asList(new Object[]{data}));
     }
 
 }

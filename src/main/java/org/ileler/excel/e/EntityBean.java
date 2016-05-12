@@ -62,7 +62,7 @@ public final class EntityBean {
 
     private static final String PROPERTY = "property";
 
-    private static final String VALUESET = "valueset";
+    private static final String WRAPPER = "wrapper";
 
     /**
      * 文档构建对象
@@ -199,7 +199,7 @@ public final class EntityBean {
             String title = fieldElement.getAttribute(TITLE); // 读取字段标题
             NodeList titleNodeList = fieldElement.getElementsByTagName(TITLE); // 读取字段标题
             NodeList valuesetNodeList = fieldElement
-                    .getElementsByTagName(VALUESET); // 读取字段值处理
+                    .getElementsByTagName(WRAPPER); // 读取字段值处理
             if (StringUtils.isBlank(name) || titleNodeList == null
                     || titleNodeList.getLength() < 1
                     || !(titleNodeList.item(0) instanceof Element)) {
