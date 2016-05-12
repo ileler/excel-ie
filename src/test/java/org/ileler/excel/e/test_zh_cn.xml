@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<fields>
+	<row style="height:30" vstyle="height:20;color:white" />
+
+	<field name="pdri_code" style="width:20;color:GREY_25_PERCENT;bold:true;fontSize:14;" title="PDRI" />
+	<field name="isbn" style="width:20;color:GREY_25_PERCENT;bold:true;fontSize:14;" title="ISBN" />
+	<field name="original_isbn" style="width:20;color:GREY_25_PERCENT;bold:true;fontSize:14;" title="原出版物的ISBN号" />
+	<field name="pdri_title" style="width:20;color:GREY_25_PERCENT;bold:true;fontSize:14;" title="题名" />
+	<field name="registered_datetime" style="width:20;color:GREY_25_PERCENT;bold:true;fontSize:14;" title="注册日期">
+		<valueset class=".DateValue">
+			<property key="pattern" value="yyyy-MM-dd" />
+		</valueset>
+	</field>
+</fields>
