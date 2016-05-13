@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<fields>
+	<row style="height:30" vstyle="height:20;color:white" />
+
+	<field name="field1" style="width:20;color:GREY_25_PERCENT;bold:true;fontSize:14;" title="字段1" />
+	<field name="field2" style="width:20;color:GREY_25_PERCENT;bold:true;fontSize:14;" title="字段2" />
+	<field name="field3" style="width:20;color:GREY_25_PERCENT;bold:true;fontSize:14;" title="字段3" />
+	<field name="field4" style="width:20;color:GREY_25_PERCENT;bold:true;fontSize:14;" title="字段4" />
+	<field name="field5" style="width:20;color:GREY_25_PERCENT;bold:true;fontSize:14;" title="字段5">
+		<wrapper class=".DateWrapper">
+			<property key="pattern" value="yyyy-MM-dd" />
+		</wrapper>
+	</field>
+</fields>

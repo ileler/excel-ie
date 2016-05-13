@@ -30,7 +30,7 @@ import java.util.*;
  */
 public final class ImportUtil {
 
-    private static final int startNum = 2;
+    private static final int startNum = 1;
 
     public static <T> void exportErrorData(InputStream is, int sheetIndex, OutputStream out,
                                            EntityBean entityBean, Collection<T> dataset)

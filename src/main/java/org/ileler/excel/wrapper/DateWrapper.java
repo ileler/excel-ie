@@ -26,14 +26,14 @@ public class DateWrapper extends Wrapper {
     @Override
     public String value(Object value, Object rowValue, LangCode langCode) {
         if (StringUtils.isBlank(pattern) || value == null || "".equals(value.toString().trim())) {
-            return null;
+            return "";
         }
         try {
             return new SimpleDateFormat(pattern).format(value);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        return value.toString();
     }
 
 }

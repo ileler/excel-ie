@@ -17,7 +17,7 @@ public class EnumWrapper extends Wrapper {
     @Override
     public String value(Object value, Object rowValue, LangCode langCode) {
         if (value == null || map == null || map.size() < 1) {
-            return null;
+            return "";
         }
         return map.get(value.toString() + "-" + langCode);
     }

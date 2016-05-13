@@ -197,12 +197,9 @@ public final class EntityBean {
         try {
             String name = fieldElement.getAttribute(NAME); // 读取字段名
             String title = fieldElement.getAttribute(TITLE); // 读取字段标题
-            NodeList titleNodeList = fieldElement.getElementsByTagName(TITLE); // 读取字段标题
             NodeList valuesetNodeList = fieldElement
                     .getElementsByTagName(WRAPPER); // 读取字段值处理
-            if (StringUtils.isBlank(name) || titleNodeList == null
-                    || titleNodeList.getLength() < 1
-                    || !(titleNodeList.item(0) instanceof Element)) {
+            if (StringUtils.isBlank(name) || StringUtils.isBlank(title)) {
                 // 字段没有名字或标题则无效
                 return null;
             }

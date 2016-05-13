@@ -1,0 +1,18 @@
+<fields>
+	<field efname="e1" rfname="field1" title="字段1">
+		<validator name=".EmptyValidator" emsg="字段1：不能为空"/>
+	</field>
+	<field efname="e2" rfname="field2" title="字段2" />
+	<field efname="e3" rfname="field3" title="字段3">
+		<validator name=".EmptyValidator" emsg="字段3：不能为空"/>
+		<validator name=".RegValidator" emsg="字段3：非空字符1到100" pattern="^[^\s].{0,99}$"/>
+	</field>
+	<field efname="e4" rfname="field4" title="字段4">
+		<validator name=".RegValidator" emsg="字段4：格式不正确" pattern="^(http://|https://)[^\u4e00-\u9fa5\s]*?[a-zA-Z]\..{1,2048}$"/>
+	</field>
+	<field efname="e5" rfname="field5" title="字段5">
+		<validator name=".EmptyValidator" emsg="字段5：不能为空"/>
+		<validator name=".RegValidator" emsg="字段5：16进制的32位字符" pattern="^([a-fA-F0-9]{32})$"/>
+	</field>
+	<rowcheck efname="emsg" esplit=" / " etitle="错误原因" />
+</fields>
