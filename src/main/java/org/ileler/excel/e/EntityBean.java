@@ -162,15 +162,21 @@ public final class EntityBean {
             return null;
         }
         try {
-            return (Wrapper) Class
-                    .forName(
-                            (clazz.startsWith(DOT) ? Wrapper.class
-                                    .getPackage().getName() : "") + clazz)
-                    .getConstructor(Element.class, Map.class)
+            return (Wrapper) Thread.currentThread().getContextClassLoader().loadClass((clazz.startsWith(DOT) ? Wrapper.class
+                    .getPackage().getName() : "") + clazz).getConstructor(Element.class, Map.class)
                     .newInstance(
                             valueElement,
                             getProperties(valueElement
                                     .getElementsByTagName(PROPERTY)));
+//            return (Wrapper) Class
+//                    .forName(
+//                            (clazz.startsWith(DOT) ? Wrapper.class
+//                                    .getPackage().getName() : "") + clazz)
+//                    .getConstructor(Element.class, Map.class)
+//                    .newInstance(
+//                            valueElement,
+//                            getProperties(valueElement
+//                                    .getElementsByTagName(PROPERTY)));
         } catch (InstantiationException | IllegalAccessException
                 | IllegalArgumentException | InvocationTargetException
                 | NoSuchMethodException | SecurityException

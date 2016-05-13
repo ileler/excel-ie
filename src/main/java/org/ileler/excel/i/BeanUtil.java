@@ -63,7 +63,8 @@ public final class BeanUtil {
 			String name = null, emsg = null;
 			if (StringUtils.isEmpty(name = ruleElement.getAttribute(NAME)) || StringUtils.isEmpty(emsg = ruleElement.getAttribute(EMSG))) 	continue;
 			try {
-				erbList.add((Validator) Class.forName((name.startsWith(STARTWITH) ? Validator.class.getPackage().getName() : "") + name).getConstructor(String.class, String.class, Element.class).newInstance(name, emsg, ruleElement));
+				erbList.add((Validator) Thread.currentThread().getContextClassLoader().loadClass((name.startsWith(STARTWITH) ? Validator.class.getPackage().getName() : "") + name).getConstructor(String.class, String.class, Element.class).newInstance(name, emsg, ruleElement));
+//				erbList.add((Validator) Class.forName((name.startsWith(STARTWITH) ? Validator.class.getPackage().getName() : "") + name).getConstructor(String.class, String.class, Element.class).newInstance(name, emsg, ruleElement));
 			} catch (InstantiationException | IllegalAccessException
 					| IllegalArgumentException
 					| InvocationTargetException | NoSuchMethodException
