@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.ileler.excel.ie
+Bundle-SymbolicName: org.ileler.excel.ie
+Bundle-Version: 1.0.0.SNAPSHOT
+Import-Package: org.eclipse.gemini.blueprint.config;version="[1.0.0,2)"
+Excluded-Imports: org.ileler.excel
