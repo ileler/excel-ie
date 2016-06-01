@@ -162,6 +162,18 @@ public final class EntityBean {
             return null;
         }
         try {
+            if (clazz.startsWith(DOT) || clazz.startsWith(Wrapper.class.getPackage().getName())) {
+                try {
+                    return (Wrapper) Wrapper.class.getClassLoader().loadClass(
+                            (clazz.startsWith(DOT) ? Wrapper.class
+                                    .getPackage().getName() : "") + clazz)
+                            .getConstructor(Element.class, Map.class)
+                            .newInstance(
+                                    valueElement,
+                                    getProperties(valueElement
+                                            .getElementsByTagName(PROPERTY)));
+                } catch (Exception e) {}
+            }
             return (Wrapper) Thread.currentThread().getContextClassLoader().loadClass((clazz.startsWith(DOT) ? Wrapper.class
                     .getPackage().getName() : "") + clazz).getConstructor(Element.class, Map.class)
                     .newInstance(
