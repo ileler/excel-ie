@@ -156,17 +156,22 @@ public class ExcelUtil {
 		int rowNum = sheet.getLastRowNum(); 	//得到总行数
 		Map<Integer, String[]> content = new HashMap<Integer, String[]>();
 		for (int i = 0; i <= rowNum; i++) {
-			Row row = sheet.getRow(i);
-			String[] str = null;
-			if (row != null) {
-				int colNum = row.getLastCellNum(); 	//得到总列数
-				str = new String[colNum];
-				int j = 0;
-				while (j < colNum) {
-					str[j] = getCellFormatValue(row.getCell(j++), config);
+			try {
+				Row row = sheet.getRow(i);
+				String[] str = null;
+				if (row != null) {
+					int colNum = row.getLastCellNum();  //得到总列数
+					if (colNum < 1)     continue;
+					str = new String[colNum];
+					int j = 0;
+					while (j < colNum) {
+						str[j] = getCellFormatValue(row.getCell(j++), config);
+					}
 				}
-			} 
-			content.put(i, str);
+				content.put(i, str);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		return content;
 	}
