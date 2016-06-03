@@ -3,7 +3,7 @@
 
   <groupId>com.ileler</groupId>
   <artifactId>com.ileler.excel.ie</artifactId>
-  <version>1.0.3</version>
+  <version>1.0.3-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>com.ileler.excel.ie</name>
