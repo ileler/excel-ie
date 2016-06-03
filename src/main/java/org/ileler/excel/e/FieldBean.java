@@ -17,9 +17,7 @@ import org.ileler.excel.wrapper.Wrapper;
 
 
 /**
- * Copyright: Copyright 2007 - 2015 MPR Tech. Co. Ltd. All Rights Reserved.
- * Date: 2015年10月29日 上午8:42:33 Author: zhangle Version: 1.0.0.0 Description:
- * 字段类型
+ * Created by ileler@qq.com on 2016/5/12.
  */
 public class FieldBean {
 

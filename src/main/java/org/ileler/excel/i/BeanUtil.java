@@ -17,6 +17,9 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Created by ileler@qq.com on 2016/5/12.
+ */
 public final class BeanUtil {
 	
 	private static final String VALIDATOR = "validator";

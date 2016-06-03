@@ -4,6 +4,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.ileler.excel.util.LangCode;
 import org.ileler.excel.validator.Validator;
 
+/**
+ * Created by ileler@qq.com on 2016/5/12.
+ */
 public class FieldBean {
 
 	private Integer index;

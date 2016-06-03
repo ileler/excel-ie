@@ -7,6 +7,9 @@ import org.w3c.dom.Element;
 import java.text.SimpleDateFormat;
 import java.util.Map;
 
+/**
+ * Created by ileler@qq.com on 2016/5/12.
+ */
 public class DateWrapper extends Wrapper {
 
     private static final String PATTERN = "pattern";

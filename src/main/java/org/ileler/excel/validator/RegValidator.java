@@ -7,6 +7,9 @@ import org.w3c.dom.Element;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+/**
+ * Created by ileler@qq.com on 2016/5/12.
+ */
 public class RegValidator extends Validator {
 	
 	private static final String PATTERN = "pattern";

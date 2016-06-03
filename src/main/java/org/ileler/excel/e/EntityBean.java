@@ -29,14 +29,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
- * Copyright: Copyright 2007 - 2015 MPR Tech. Co. Ltd. All Rights Reserved.
- * Date: 2015年10月29日 上午8:46:03 Author: zhangle Version: 1.0.0.0 Description:
- * 导出实体定义类型
+ * Created by ileler@qq.com on 2016/5/12.
  */
 public final class EntityBean {
 
@@ -136,7 +134,7 @@ public final class EntityBean {
                     continue;
                 }
                 if (map == null) {
-                    map = new Hashtable<>();
+                    map = new HashMap<>(0);
                 }
                 map.put(key, value);
             }

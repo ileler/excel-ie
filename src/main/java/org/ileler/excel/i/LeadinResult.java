@@ -16,6 +16,9 @@ package org.ileler.excel.i;
 import java.io.Serializable;
 import java.util.Map;
 
+/**
+ * Created by ileler@qq.com on 2016/5/12.
+ */
 public class LeadinResult implements Serializable {
 
     private static final long serialVersionUID = -8776390534801677291L;

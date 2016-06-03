@@ -26,7 +26,7 @@ import org.apache.poi.hssf.util.HSSFColor;
 import org.ileler.excel.util.LangCode;
 import org.ileler.excel.wrapper.Wrapper;
 
-import java.awt.*;
+import java.awt.Color;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -34,18 +34,21 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Created by ileler@qq.com on 2016/5/12.
+ */
 public final class ExportUtil {
 
     private static Map<String, Short> colorShort;
     private static Map<String, Short> borderStyle;
 
     static {
-        colorShort = new Hashtable<>();
+        colorShort = new HashMap<>(0);
         colorShort.put("BLACK", HSSFColor.BLACK.index);
         colorShort.put("BROWN", HSSFColor.BROWN.index);
         colorShort.put("OLIVE_GREEN", HSSFColor.OLIVE_GREEN.index);
@@ -95,7 +98,7 @@ public final class ExportUtil {
                 HSSFColor.LIGHT_CORNFLOWER_BLUE.index);
         colorShort.put("TAN", HSSFColor.TAN.index);
 
-        borderStyle = new Hashtable<>();
+        borderStyle = new HashMap<>(0);
         borderStyle.put("THIN", HSSFCellStyle.BORDER_THIN);
         borderStyle.put("MEDIUM", HSSFCellStyle.BORDER_MEDIUM);
         borderStyle.put("DASHED", HSSFCellStyle.BORDER_DASHED);

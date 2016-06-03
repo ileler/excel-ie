@@ -4,11 +4,14 @@ import org.apache.commons.lang3.StringUtils;
 import org.ileler.excel.util.LangCode;
 import org.ileler.excel.validator.Validator;
 
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
+/**
+ * Created by ileler@qq.com on 2016/5/12.
+ */
 public class EntityBean {
     
     private static final String EFIELD = "emsg";
@@ -77,7 +80,7 @@ public class EntityBean {
     private Map<String, Object> getErrorMap(Map<FieldBean, Object> map) {
         if (map == null)    return null;
         Iterator<Entry<FieldBean, Object>> iter = map.entrySet().iterator();
-        Map<String, Object> _map = new Hashtable<String, Object>();
+        Map<String, Object> _map = new HashMap<>(0);
         String errField = null;
         while (iter.hasNext()) {
             Entry<FieldBean, Object> entry = iter.next();
@@ -90,7 +93,7 @@ public class EntityBean {
     private Map<String, Object> getRightMap(Map<FieldBean, Object> map) {
         if (map == null)    return null;
         Iterator<Entry<FieldBean, Object>> iter = map.entrySet().iterator();
-        Map<String, Object> _map = new Hashtable<String, Object>();
+        Map<String, Object> _map = new HashMap<>(0);
         FieldBean fieldBean = null;
         String field = null;
         Object value = null;
@@ -130,7 +133,7 @@ public class EntityBean {
                 rowMsg = (!StringUtils.isEmpty(rowMsg) ? rowMsg + (!StringUtils.isEmpty(colMsg) ? esplit : "") : "") + (!StringUtils.isEmpty(colMsg) ? colMsg : "");
                 colMsg = null;
             }
-            if (_map == null)   _map = new Hashtable<FieldBean, Object>();
+            if (_map == null)   _map = new HashMap<>(0);
             _map.put(fieldBean, col == null ? "" : col);
         }
         Map<String, Object> __map = null;

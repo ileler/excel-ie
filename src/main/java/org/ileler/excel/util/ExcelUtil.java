@@ -17,6 +17,9 @@ import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Created by ileler@qq.com on 2016/5/12.
+ */
 public class ExcelUtil {
 	
 	public static final String DATEPATTERN = "yyyy-MM-dd HH:mm:ss";

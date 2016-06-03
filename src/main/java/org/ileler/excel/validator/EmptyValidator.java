@@ -6,6 +6,9 @@ import org.w3c.dom.Element;
 
 import java.util.Map;
 
+/**
+ * Created by ileler@qq.com on 2016/5/12.
+ */
 public class EmptyValidator extends Validator {
 	
 	public EmptyValidator(String name, String emsg, Element element) {

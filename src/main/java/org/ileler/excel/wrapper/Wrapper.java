@@ -6,6 +6,9 @@ import org.w3c.dom.Element;
 
 import java.util.Map;
 
+/**
+ * Created by ileler@qq.com on 2016/5/12.
+ */
 public abstract class Wrapper {
 
     protected Element element;

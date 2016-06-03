@@ -3,7 +3,7 @@ package org.ileler.excel.util;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * Created by zhangle on 2016/5/11.
+ * Created by ileler@qq.com on 2016/5/12.
  */
 public enum LangCode {
 

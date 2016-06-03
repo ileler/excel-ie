@@ -13,15 +13,18 @@
  */
 package org.ileler.excel.e;
 
-import java.awt.Color;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.Hashtable;
-import java.util.Map;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import java.awt.Color;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Created by ileler@qq.com on 2016/5/12.
+ */
 public class Style {
 
     private static final String COM = ",";
@@ -48,7 +51,7 @@ public class Style {
                     name = name.substring(0, 1).toLowerCase()
                             + name.substring(1);
                     if (map == null) {
-                        map = new Hashtable<>();
+                        map = new HashMap<>(0);
                     }
                     map.put(name, method);
                 } else if (name.startsWith(GET)) {
@@ -56,7 +59,7 @@ public class Style {
                     name = name.substring(0, 1).toLowerCase()
                             + name.substring(1);
                     if (getterMap == null) {
-                        getterMap = new Hashtable<>();
+                        getterMap = new HashMap<>(0);
                     }
                     getterMap.put(name, method);
                 } else {

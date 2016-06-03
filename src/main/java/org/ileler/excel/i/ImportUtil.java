@@ -16,17 +16,22 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.ileler.excel.util.ExcelUtil;
 import org.ileler.excel.util.LangCode;
 
-import java.awt.*;
+import java.awt.Color;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.lang.reflect.InvocationTargetException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
 
 /**
- * Created by zhangle on 2016/5/12.
+ * Created by ileler@qq.com on 2016/5/12.
  */
 public final class ImportUtil {
 
@@ -168,13 +173,13 @@ public final class ImportUtil {
 
     private static LeadinResult resolve(Map<Integer, String[]> map, EntityBean entityBean, LangCode langCode, Map<String, Object> session) {
         if (map == null || entityBean == null)     return null;
-        Map<Integer, Map<String, Object>> rightList = new Hashtable<>(0);
-        Map<Integer, Map<String, Object>> errorList = new Hashtable<>(0);
+        Map<Integer, Map<String, Object>> rightList = new HashMap<>(0);
+        Map<Integer, Map<String, Object>> errorList = new HashMap<>(0);
         //循环行
         for (int i = startNum, j = map.size(); i < j; i++) {
             String[] cols = map.get(i);
             if (isEmpty(cols))  continue;
-            Map<String, Object> result = new Hashtable<String, Object>();
+            Map<String, Object> result = new HashMap<String, Object>();
             if (entityBean.checkRow(cols, result, langCode, session)) {
                 if (result.size() < 1)   continue;
                 rightList.put(i, result);

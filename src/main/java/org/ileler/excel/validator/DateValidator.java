@@ -9,6 +9,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 
+/**
+ * Created by ileler@qq.com on 2016/5/12.
+ */
 public class DateValidator extends Validator {
 	
 	private static final String DATEPATTERN = "yyyy-MM-dd HH:mm:ss";
