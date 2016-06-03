@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 
@@ -173,8 +174,8 @@ public final class ImportUtil {
 
     private static LeadinResult resolve(Map<Integer, String[]> map, EntityBean entityBean, LangCode langCode, Map<String, Object> session) {
         if (map == null || entityBean == null)     return null;
-        Map<Integer, Map<String, Object>> rightList = new HashMap<>(0);
-        Map<Integer, Map<String, Object>> errorList = new HashMap<>(0);
+        Map<Integer, Map<String, Object>> rightList = new LinkedHashMap<>(0);
+        Map<Integer, Map<String, Object>> errorList = new LinkedHashMap<>(0);
         //循环行
         for (int i = startNum, j = map.size(); i < j; i++) {
             String[] cols = map.get(i);
